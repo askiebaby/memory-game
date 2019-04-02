@@ -24,6 +24,12 @@ body {
   margin: 5px;
   position: relative;
   box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+  transform: scale(1);
+}
+
+.memory-card:active {
+  transform: scale(0.97);
+  transition: transform .2s;
 }
 
 .front-face,
@@ -35,3 +41,4 @@ body {
   border-radius: 5px;
   background: #1C7CCC;
 }
+
