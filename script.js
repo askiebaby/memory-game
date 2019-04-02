@@ -10,6 +10,7 @@ function flipCard() {
 
   // 避免翻同一張牌當做第二張
   if (this === firstCard) return;
+  
   this.classList.add('flip');
 
   if (!hasFlippedCard) {
@@ -27,7 +28,7 @@ function checkForMatch() {
   // 如果牌組配對成功 => isMatch
   // 就不可以再點擊那組牌 => disableCards()
   // 配對錯誤就把該牌組蓋起來 => unflipCards()
-  let isMatch = firstCard.dataset.framework === secondCard.dataset.name;
+  let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
   isMatch ? disableCards() : unflipCards();
 }
 
@@ -54,5 +55,6 @@ function resetBoard() {
   [hasFlippedCard, lockBoard] = [false, false];
   [firstCard, secondCard] = [null, null];
 }
+
 
 cards.forEach(card => card.addEventListener('click', flipCard));
