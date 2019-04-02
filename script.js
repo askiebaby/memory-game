@@ -7,6 +7,9 @@ let firstCard, secondCard;
 function flipCard() {
   // 剛剛沒配對成功的話，就把牌蓋起來
   if (lockBoard) return;
+  
+  // 避免翻同一張牌當做第二張
+  if (this === firstCard) return;
   this.classList.add('flip');
 
   if (!hasFlippedCard) {
