@@ -16,6 +16,7 @@ body {
   margin: auto;
   display: flex;
   flex-wrap: wrap;
+  perspective: 1000px;
 }
 
 .memory-card {
@@ -30,6 +31,10 @@ body {
 .memory-card:active {
   transform: scale(0.97);
   transition: transform .2s;
+}
+
+.memory-card.flip {
+  transform: rotateY(180deg);
 }
 
 .front-face,
