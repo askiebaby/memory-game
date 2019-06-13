@@ -1,21 +1,43 @@
 * {
   padding: 0;
   margin: 0;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 body {
   height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  background: #060AB2;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #ecf3f2;
+}
+
+h1 {
+  color: #009688;
+  padding-top: 100px;
 }
 
 .memory-game {
   width: 640px;
   height: 640px;
   margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-perspective: 1000px;
   perspective: 1000px;
 }
 
@@ -24,18 +46,35 @@ body {
   height: calc(33.333% - 10px);
   margin: 5px;
   position: relative;
-  box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
   transform: scale(1);
+  -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
+  -webkit-transition: -webkit-transform .5s;
+  transition: -webkit-transform .5s;
+  -o-transition: transform .5s;
   transition: transform .5s;
+  transition: transform .5s, -webkit-transform .5s;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .memory-card:active {
+  -webkit-transform: scale(0.97);
+  -ms-transform: scale(0.97);
   transform: scale(0.97);
+  -webkit-transition: -webkit-transform .2s;
+  transition: -webkit-transform .2s;
+  -o-transition: transform .2s;
   transition: transform .2s;
+  transition: transform .2s, -webkit-transform .2s;
 }
 
 .memory-card.flip {
+  -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
 }
 
@@ -46,10 +85,12 @@ body {
   padding: 20px;
   position: absolute;
   border-radius: 5px;
-  background: #1C7CCC;
+  background: #c2e5e0;
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 
 .front-face {
+  -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
 }
